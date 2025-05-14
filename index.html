@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Father's Day ❤️</title>
+  <title>Happy Father's Day</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -220,7 +220,7 @@
   </div>
 
   <div class="card">
-    <h2>Happy Father's Day ❤️</h2>
+    <h2>Happy Father's Day</h2>
     <div class="phone-frame">
       <img src="https://media2.giphy.com/media/6RhV5rDL8a5dDvkFWg/giphy.gif" alt="Father's Day Greeting on a Phone Screen">
     </div>
@@ -229,7 +229,7 @@
       <div class="shayari">kandhon par jhulaaya kandhon par ghumaaya, ek paapa kee badaulat hee mera jeevan khoobasoorat ban paaya ! happy Father's day pyaare paapa !</div>
       <div class="shayari">chupake se ek din rakh aaoon sabhee khushiyaan unake sirahaane mein jinhonne ek arasa bita diya mujhe behatar insaan banaane mein !</div>
     </div>
-    <p class="msg">You're my superhero, Dad! 💪</p>
+    <p class="msg">You're my superhero, Dad </p>
     <p class="from" id="fromText"></p>
     <div class="input-box">
       <input type="text" id="nameInput" placeholder="Your Name">
@@ -255,9 +255,9 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const fromName = urlParams.get('from');
-    if (fromName) {
-      document.getElementById('fromText').textContent = `– ${decodeURIComponent(fromName)}`;
+    const fromNameQuery = urlParams.get('from'); // Renamed for consistency
+    if (fromNameQuery) {
+      document.getElementById('fromText').textContent = `– ${decodeURIComponent(fromNameQuery)}`;
     }
 
     const nameInputElement = document.getElementById('nameInput');
@@ -273,7 +273,10 @@
 
       const nameToShow = name;
       const linkToShare = `${window.location.origin}${window.location.pathname}?from=${encodeURIComponent(nameToShow)}`;
-      const greetingMsg = `🎉 Happy Father's Day! ${nameToShow} has sent you a special message. Check it out: ${linkToShare}`;
+
+      // Updated WhatsApp message format
+      const greetingMsg = `Priya Papa,\n\nAap ko ${nameToShow} ki or se Father's Day ki haardik shubhkamnaye.\n\nYah vishesh shubhkamnaye sandesh sirf aapke liye: ${linkToShare}\n\nHappy Father's Day`;
+
       window.open(`https://wa.me/?text=${encodeURIComponent(greetingMsg)}`, '_blank');
     }
 
@@ -308,8 +311,10 @@
             }
         };
     }
-    if (!document.getElementById('shareLink').textContent.trim()) {
-        document.getElementById('shareLink').style.display = 'none';
+    // Initially hide the share link paragraph if it's empty and no 'from' param in URL
+    const shareLinkP = document.getElementById('shareLink');
+    if (!shareLinkP.textContent.trim() && !fromNameQuery) { // Also check if 'from' param exists
+        shareLinkP.style.display = 'none';
     }
   </script>
 
