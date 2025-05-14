@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Father's Day ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 15px 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #e0f0ff, #f0f8ff);
+      color: #333;
+      text-align: center;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* Card Styles */
+    .card {
+      max-width: 330px;
+      margin: 15px auto;
+      padding: 25px;
+      background: #4a90e2; /* BLUE BACKGROUND FOR THE CARD */
+      color: #fff; /* Default text color inside card to white */
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Mobile Phone Frame Styles - LANDSCAPE */
+    .phone-frame {
+      width: 260px;
+      height: 150px;
+      background: #2c3e50;
+      border-radius: 20px;
+      padding: 8px;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: #1a252f;
+      border-radius: 50%;
+    }
+
+    .phone-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* Message Styles */
+    .msg {
+      font-size: 0.95rem;
+      margin: 12px 0;
+      color: #f0f8ff;
+      font-weight: 600;
+    }
+
+    .from {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* Input Box Styles */
+    .input-box {
+      margin: 20px 0;
+    }
+
+    input#nameInput { /* Specific styling for name input */
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      border: 1px solid #a0c8f0;
+      color: #333;
+      background-color: #fff;
+      width: 90%; /* Make input take most of the width */
+      box-sizing: border-box; /* Include padding in width calculation */
+      margin-bottom: 12px; /* Space below input before buttons */
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+    }
+     input#nameInput::placeholder {
+        color: #777;
+    }
+
+    input#nameInput:focus {
+      outline: none;
+      border-color: #fff;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Button Styles - general for all buttons in this context */
+    .input-box button {
+      display: block; /* Make buttons take full available width within their container */
+      width: 70%; /* Or a specific width like 200px */
+      margin: 0 auto 10px auto; /* Center the button and add margin below */
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease-in-out;
+      font-weight: 600;
+      font-family: 'Nunito', sans-serif;
+      cursor: pointer;
+      border: none;
+      box-sizing: border-box;
+    }
+    .input-box button:hover {
+      opacity: 0.9;
+    }
+
+    #createLinkBtn {
+      background: #f0f8ff;
+      color: #357abd;
+      border: 1px solid #357abd;
+    }
+    #createLinkBtn:hover {
+      background: #fff;
+      color: #4a90e2;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1DAF53;
+    }
+
+    /* Share Link Styles */
+    .share-link {
+      margin-top: 10px; /* Space from the last button */
+      word-break: break-word;
+      font-size: 0.8rem;
+      color: #e6f7ff;
+      font-weight: 500;
+      min-height: 1.2em;
+      background-color: rgba(0,0,0,0.1);
+      padding: 5px 8px;
+      border-radius: 4px;
+      user-select: text;
+      display: inline-block;
+      max-width: 90%;
+    }
+
+    /* Shayari Slider Styles */
+    .slider {
+      position: relative;
+      margin-top: 15px;
+      min-height: 60px;
+      padding: 0 10px;
+    }
+
+    .shayari {
+      display: none;
+      font-size: 0.9rem;
+      padding: 10px 0;
+      color: #f0f8ff;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .shayari.active {
+        display: block;
+    }
+
+    /* Ad Styles */
+    .ad-container {
+      margin: 15px auto;
+      max-width: 320px;
+      height: 40px;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .ad-container iframe {
+      display: block;
+      margin: 0 auto;
+      width: 320px;
+      height: 40px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ad Container Top -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key': '977465b3e7ab87b751e70a7722ef111e',
+        'format': 'iframe',
+        'height': 40,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/977465b3e7ab87b751e70a7722ef111e/invoke.js"></script>
+  </div>
+
+  <div class="card">
+    <h2>Happy Father's Day ❤️</h2>
+    <div class="phone-frame">
+      <img src="https://media2.giphy.com/media/6RhV5rDL8a5dDvkFWg/giphy.gif" alt="Father's Day Greeting on a Phone Screen">
+    </div>
+    <div class="slider">
+      <div class="shayari active">"Papa, aap hain mere bhagwan, Aapke bina hai sab kuch veeran."</div>
+      <div class="shayari">kandhon par jhulaaya kandhon par ghumaaya, ek paapa kee badaulat hee mera jeevan khoobasoorat ban paaya ! happy Father's day pyaare paapa !</div>
+      <div class="shayari">chupake se ek din rakh aaoon sabhee khushiyaan unake sirahaane mein jinhonne ek arasa bita diya mujhe behatar insaan banaane mein !</div>
+    </div>
+    <p class="msg">You're my superhero, Dad! 💪</p>
+    <p class="from" id="fromText"></p>
+    <div class="input-box">
+      <input type="text" id="nameInput" placeholder="Your Name">
+      <button type="button" id="createLinkBtn">Create Link</button>
+      <button class="whatsapp-btn" onclick="shareWhatsApp()">Share on WhatsApp</button>
+      <p class="share-link" id="shareLink"></p>
+    </div>
+  </div>
+
+  <!-- Ad Container Bottom -->
+  <div class="ad-container">
+    <script type="text/javascript">
+      atOptions = {
+        'key': '977465b3e7ab87b751e70a7722ef111e',
+        'format': 'iframe',
+        'height': 40,
+        'width': 320,
+        'params': {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/977465b3e7ab87b751e70a7722ef111e/invoke.js"></script>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromName = urlParams.get('from');
+    if (fromName) {
+      document.getElementById('fromText').textContent = `– ${decodeURIComponent(fromName)}`;
+    }
+
+    const nameInputElement = document.getElementById('nameInput');
+
+    function shareWhatsApp() {
+      const name = nameInputElement.value.trim();
+
+      if (!name) {
+        alert("Please enter your name first before sharing on WhatsApp.");
+        nameInputElement.focus();
+        return;
+      }
+
+      const nameToShow = name;
+      const linkToShare = `${window.location.origin}${window.location.pathname}?from=${encodeURIComponent(nameToShow)}`;
+      const greetingMsg = `🎉 Happy Father's Day! ${nameToShow} has sent you a special message. Check it out: ${linkToShare}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(greetingMsg)}`, '_blank');
+    }
+
+    let currentShayariIndex = 0;
+    const shayaris = document.querySelectorAll('.shayari');
+    if (shayaris.length > 0 && !document.querySelector('.shayari.active')) {
+        shayaris[0].classList.add('active');
+    }
+
+    setInterval(() => {
+      if (shayaris.length > 0) {
+        shayaris[currentShayariIndex].classList.remove('active');
+        currentShayariIndex = (currentShayariIndex + 1) % shayaris.length;
+        shayaris[currentShayariIndex].classList.add('active');
+      }
+    }, 5000);
+
+    const createLinkButton = document.getElementById('createLinkBtn');
+    if (createLinkButton) {
+        createLinkButton.onclick = function(event) {
+            event.preventDefault();
+            const name = nameInputElement.value.trim();
+            const shareLinkElement = document.getElementById('shareLink');
+            if (name) {
+              const link = `${window.location.origin}${window.location.pathname}?from=${encodeURIComponent(name)}`;
+              shareLinkElement.textContent = `Your link: ${link}`;
+              shareLinkElement.style.display = 'inline-block';
+            } else {
+              shareLinkElement.textContent = '';
+              shareLinkElement.style.display = 'none';
+              alert("Please enter your name to create a personalized link.");
+            }
+        };
+    }
+    if (!document.getElementById('shareLink').textContent.trim()) {
+        document.getElementById('shareLink').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
